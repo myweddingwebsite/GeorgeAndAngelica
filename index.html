@@ -253,39 +253,40 @@ nav.scrolled{
    ============================================================ */
 .story-bg{background:var(--ivory-deep)}
 .story-list{margin-top:3.5rem;position:relative;max-width:680px;margin-left:auto;margin-right:auto}
-.story-list::before{
-  content:"";position:absolute;left:27px;top:0;bottom:0;width:1px;
-  background:linear-gradient(transparent,var(--gold) 4%,var(--gold) 96%,transparent);
-}
 .chapter{
   display:grid;grid-template-columns:54px 1fr;
-  align-items:start;column-gap:1.6rem;margin-bottom:3.4rem;position:relative;
+  grid-template-areas:
+    "node  when"
+    "..... title"
+    "body  body";
+  column-gap:1.6rem;row-gap:.35rem;
+  margin-bottom:3.4rem;position:relative;
 }
 .chapter:last-child{margin-bottom:0}
 .chapter-node{
-  grid-column:1;justify-self:center;
+  grid-area:node;justify-self:center;align-self:center;
   width:54px;height:54px;border-radius:50%;
   background:var(--burgundy);border:1px solid var(--gold);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--serif);font-size:1.05rem;color:var(--gold-bright);
-  box-shadow:0 0 0 8px var(--ivory-deep);
   position:relative;z-index:2;
 }
-.chapter-card{grid-column:2;text-align:left;padding-top:.3rem}
+.chapter-when{grid-area:when;align-self:center}
+.chapter-title{
+  grid-area:title;
+  font-family:var(--serif);font-weight:600;font-size:clamp(1.35rem,3vw,1.7rem);
+  color:var(--burgundy);margin:0;letter-spacing:.02em;
+}
 .chapter-when{
   font-family:var(--sans);font-size:.68rem;letter-spacing:.34em;
   text-transform:uppercase;color:var(--maroon);
 }
-.chapter-title{
-  font-family:var(--serif);font-weight:600;font-size:clamp(1.35rem,3vw,1.7rem);
-  color:var(--burgundy);margin:.4rem 0 .8rem;letter-spacing:.02em;
-}
-.chapter-card p{font-size:1.05rem;color:#4A2A34;margin-bottom:.85rem}
-.chapter-card p:last-child{margin-bottom:0}
+.chapter-body{grid-area:body;padding-top:.4rem}
+.chapter-body p{font-size:1.05rem;color:#4A2A34;margin-bottom:.85rem}
+.chapter-body p:last-child{margin-bottom:0}
 @media(max-width:560px){
-  .story-list::before{left:21px}
   .chapter{grid-template-columns:42px 1fr;column-gap:1.1rem;margin-bottom:2.6rem}
-  .chapter-node{width:42px;height:42px;font-size:.85rem;box-shadow:0 0 0 6px var(--ivory-deep)}
+  .chapter-node{width:42px;height:42px;font-size:.85rem}
 }
 
 /* ============================================================
@@ -582,40 +583,40 @@ footer{
   <div class="wrap story-list">
 
     <article class="chapter reveal">
-      <div class="chapter-card">
-        <p class="chapter-when">2016 &middot; College Days</p>
-        <h3 class="chapter-title">It Started With a Bet</h3>
+      <p class="chapter-when">2016 &middot; College Days</p>
+      <div class="chapter-node">I</div>
+      <h3 class="chapter-title">It Started With a Bet</h3>
+      <div class="chapter-body">
         <p>Sometimes, the most beautiful love stories begin in the most unexpected ways. Back in 2016, during their college days, they were simply classmates living in different worlds. His group was loud, outgoing, and full of energy, while hers preferred the quiet side. Although they saw each other almost every day, they were never really close.</p>
         <p>Everything changed because of a simple bet. What started as a playful challenge slowly turned into casual conversations, and those conversations soon became the highlight of each day. Shared laughter turned into meaningful conversations, and little by little, friendship quietly blossomed into something much deeper.</p>
       </div>
-      <div class="chapter-node">I</div>
     </article>
 
     <article class="chapter reveal">
+      <p class="chapter-when">November 25, 2016</p>
       <div class="chapter-node">II</div>
-      <div class="chapter-card">
-        <p class="chapter-when">November 25, 2016</p>
-        <h3 class="chapter-title">Officially Us</h3>
+      <h3 class="chapter-title">Officially Us</h3>
+      <div class="chapter-body">
         <p>After months of meaningful conversations, shared laughter, and getting to know one another, the connection became undeniable. On November 25, 2016, they officially became boyfriend and girlfriend &mdash; not a story of grand gestures or perfect timing, but a story of two hearts choosing each other.</p>
         <p>The beginning was far from easy. There were moments when giving up might have seemed easier, but they stood beside each other, faced every obstacle together, and grew stronger through every trial. Each challenge taught trust, communication, and unconditional support &mdash; and with every hurdle they overcame, their love became deeper, stronger, and more certain.</p>
       </div>
     </article>
 
     <article class="chapter reveal">
-      <div class="chapter-card">
-        <p class="chapter-when">November 25, 2025</p>
-        <h3 class="chapter-title">She Said Yes</h3>
+      <p class="chapter-when">November 25, 2025</p>
+      <div class="chapter-node">III</div>
+      <h3 class="chapter-title">She Said Yes</h3>
+      <div class="chapter-body">
         <p>Nine years after officially becoming boyfriend and girlfriend, another unforgettable chapter unfolded. On the very same date that marked the beginning of their relationship, he got down on one knee and asked the woman he loved to spend forever by his side.</p>
         <p>It was a moment filled with happy tears, genuine smiles, and overwhelming joy. Without hesitation, she said <em>&ldquo;Yes.&rdquo;</em> More than a beautiful surprise, it was the beginning of a new promise &mdash; to continue choosing each other and building a lifetime of love, faith, and endless adventures.</p>
       </div>
-      <div class="chapter-node">III</div>
     </article>
 
     <article class="chapter reveal">
+      <p class="chapter-when">November 30, 2026 &middot; Tagaytay</p>
       <div class="chapter-node">IV</div>
-      <div class="chapter-card">
-        <p class="chapter-when">November 30, 2026 &middot; Tagaytay</p>
-        <h3 class="chapter-title">Forever Begins</h3>
+      <h3 class="chapter-title">Forever Begins</h3>
+      <div class="chapter-body">
         <p>Every chapter of this story has led to this very moment. What began with two classmates from different circles, brought together by an unexpected bet, has grown into a love built on patience, trust, resilience, and unwavering commitment.</p>
         <p>Surrounded by the love and blessings of family and friends, they now stand hand in hand, ready to begin the next chapter &mdash; not just as best friends or lifelong partners, but as husband and wife. Today is not the end of their love story. It is the beginning of a new adventure. And today, their forever begins.</p>
       </div>
