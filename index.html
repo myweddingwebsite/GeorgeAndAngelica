@@ -252,19 +252,18 @@ nav.scrolled{
    LOVE STORY
    ============================================================ */
 .story-bg{background:var(--ivory-deep)}
-.story-list{margin-top:3.5rem;position:relative}
+.story-list{margin-top:3.5rem;position:relative;max-width:680px;margin-left:auto;margin-right:auto}
 .story-list::before{
-  content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;
-  background:linear-gradient(transparent,var(--gold) 8%,var(--gold) 92%,transparent);
-  transform:translateX(-50%);
+  content:"";position:absolute;left:27px;top:0;bottom:0;width:1px;
+  background:linear-gradient(transparent,var(--gold) 4%,var(--gold) 96%,transparent);
 }
 .chapter{
-  display:grid;grid-template-columns:1fr 90px 1fr;
-  align-items:start;gap:0;margin-bottom:4rem;position:relative;
+  display:grid;grid-template-columns:54px 1fr;
+  align-items:start;column-gap:1.6rem;margin-bottom:3.4rem;position:relative;
 }
 .chapter:last-child{margin-bottom:0}
 .chapter-node{
-  grid-column:2;justify-self:center;
+  grid-column:1;justify-self:center;
   width:54px;height:54px;border-radius:50%;
   background:var(--burgundy);border:1px solid var(--gold);
   display:flex;align-items:center;justify-content:center;
@@ -272,9 +271,7 @@ nav.scrolled{
   box-shadow:0 0 0 8px var(--ivory-deep);
   position:relative;z-index:2;
 }
-.chapter-card{padding:0 2.2rem}
-.chapter:nth-child(odd) .chapter-card{grid-column:1;text-align:right}
-.chapter:nth-child(even) .chapter-card{grid-column:3;text-align:left}
+.chapter-card{grid-column:2;text-align:left;padding-top:.3rem}
 .chapter-when{
   font-family:var(--sans);font-size:.68rem;letter-spacing:.34em;
   text-transform:uppercase;color:var(--maroon);
@@ -285,12 +282,10 @@ nav.scrolled{
 }
 .chapter-card p{font-size:1.05rem;color:#4A2A34;margin-bottom:.85rem}
 .chapter-card p:last-child{margin-bottom:0}
-@media(max-width:760px){
-  .story-list::before{left:26px}
-  .chapter{grid-template-columns:52px 1fr;margin-bottom:3rem}
-  .chapter-node{grid-column:1;width:44px;height:44px;font-size:.9rem;box-shadow:0 0 0 6px var(--ivory-deep)}
-  .chapter:nth-child(odd) .chapter-card,
-  .chapter:nth-child(even) .chapter-card{grid-column:2;text-align:left;padding:0 0 0 1.3rem}
+@media(max-width:560px){
+  .story-list::before{left:21px}
+  .chapter{grid-template-columns:42px 1fr;column-gap:1.1rem;margin-bottom:2.6rem}
+  .chapter-node{width:42px;height:42px;font-size:.85rem;box-shadow:0 0 0 6px var(--ivory-deep)}
 }
 
 /* ============================================================
@@ -399,16 +394,17 @@ nav.scrolled{
   background:linear-gradient(170deg,var(--burgundy-ink),var(--burgundy) 60%,#3D0B17);
 }
 .palette{
-  display:flex;justify-content:center;gap:1.4rem;margin:2.4rem 0 1rem;flex-wrap:wrap;
+  display:flex;justify-content:center;flex-wrap:nowrap;
+  gap:clamp(.6rem,4vw,1.4rem);margin:2.4rem 0 1rem;
 }
-.swatch{text-align:center}
+.swatch{text-align:center;flex:0 1 auto}
 .swatch-dot{
-  width:64px;height:64px;border-radius:50%;
+  width:clamp(40px,13vw,64px);height:clamp(40px,13vw,64px);border-radius:50%;
   border:1px solid rgba(239,223,194,.5);
   box-shadow:inset 0 0 0 4px var(--burgundy-ink),0 6px 18px rgba(0,0,0,.35);
   margin:0 auto .6rem;
 }
-.swatch-name{font-family:var(--sans);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-bright)}
+.swatch-name{font-family:var(--sans);font-size:clamp(.5rem,2vw,.62rem);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bright);white-space:nowrap}
 .attire-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.6rem;
 }
@@ -839,13 +835,11 @@ footer{
     <div class="qr-grid">
       <div class="qr-card">
         <p class="qr-label">BPI</p>
-        <!-- IMAGE: replace this div with the BPI QR <img> -->
-        <div class="qr-ph">BPI QR Code</div>
+        <img src="https://ik.imagekit.io/jcsquo5nq/angelica%20and%20george/bpi%20qr.jpg" alt="BPI QR code" style="width:100%;aspect-ratio:1/1;object-fit:contain">
       </div>
       <div class="qr-card">
         <p class="qr-label">GCash</p>
-        <!-- IMAGE: replace this div with the GCash QR <img> -->
-        <div class="qr-ph">GCash QR Code</div>
+        <img src="https://ik.imagekit.io/jcsquo5nq/angelica%20and%20george/gcash%20qr.jpg" alt="GCash QR code" style="width:100%;aspect-ratio:1/1;object-fit:contain">
       </div>
     </div>
   </div>
